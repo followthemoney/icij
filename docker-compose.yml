@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  datastore:
+    image: postgres:11.4
+    volumes:
+      - "./build/datastore:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_USER: datastore
+      POSTGRES_PASSWORD: datastore
+
+  shell:
+    build: .
+    command: /bin/bash
+    links:
+      - datastore
+    volumes:
+      - "./src:/icij/src"
+      - "./data:/icij/data"
+    tmpfs:
+      - "/tmp"
