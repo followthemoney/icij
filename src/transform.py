@@ -10,6 +10,7 @@ entities = {};
 mappings = {
         'entities': 'entities.yml',
         'officers': 'officers.yml',
+        'intermediaries': 'intermediaries.yml',
         'others': 'others.yml',
         # TODO - Add these addresses to related LegalEntity address & county fields
         # 'addresses': 'addresses.yml',
@@ -38,6 +39,7 @@ def main():
 
                     bulk.put(entity)
 
+
     # Now process releationships, converting ICIJ _id fields into corresponding FTM entity IDs
     for gen in get_map_generators('relations', 'relations.yml'):
         for record in gen.source.records:
@@ -51,11 +53,11 @@ def main():
                 print('Entity with ID %s not found for %s relation' % (err, record['_type']))
                 continue
 
+    bulk.flush()
+
     # TODO - Process address relations seperately as they have to be added to entities
     # Use address relation mapping to add address entities to related LegalEntities
 
-
-    bulk.flush()
 
 if __name__ == "__main__":
     main()

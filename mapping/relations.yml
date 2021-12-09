@@ -140,9 +140,9 @@ relations:
               format: "%d-%b-%Y"
             role:
               column: link
-            agent:
+            subject:
               column: _start
-            client:
+            object:
               column: _end
     - csv_url: 'data/relationships.csv'
       filters:
@@ -168,7 +168,7 @@ relations:
               format: "%d-%b-%Y"
             role:
               column: link
-            agent:
+            subject:
               column: _start
-            client:
+            object:
               column: _end
