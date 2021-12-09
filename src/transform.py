@@ -32,11 +32,7 @@ def main():
             for record in gen.source.records:
                 for entity in gen.map(record).values():
                     # Keep a map of ICIJ _id <=> FTM id
-                    if record['_id'] not in entities:
-                        entities[record['_id']] = entity.id
-                    else:
-                        raise Exception('_id %s is not unique!' % record['_id'])
-
+                    entities[record['_id']] = entity.id
                     bulk.put(entity)
 
 
