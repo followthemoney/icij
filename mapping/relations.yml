@@ -1,30 +1,25 @@
-icij:
+relations:
   queries:
-    - filters:
+    - csv_url: 'data/relationships.csv'
+      filters:
         _type: "officer_of"
       entities:
-        company:
-          schema: Company
-          #key_literal: "Company"
-          keys:
-            - _end
-        person:
-          schema: Person
-          #key_literal: "Person"
-          keys:
-            - _start
         officer:
-          schema: Membership
-          #key_literal: "Membership"
+          schema: Representation
+          key_literal: 'representation'
           keys:
             - _start
             - _end
           properties:
-            organization:
-              entity: company
-              required: true
-            member:
-              entity: person
-              required: true
-            summary:
+            startDate:
+              column: start_date
+              format: "%d-%b-%Y"
+            endDate:
+              column: end_date
+              format: "%d-%b-%Y"
+            role:
               column: link
+            agent:
+              column: _start
+            client:
+              column: _end

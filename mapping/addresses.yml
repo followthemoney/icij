@@ -1,0 +1,13 @@
+addresses:
+  queries:
+    - csv_url: 'data/nodes-addresses.csv'
+      entities:
+        address:
+          schema: Address
+          keys:
+            - _id
+          properties:
+            full:
+              column: address
+            country:
+              column: countries
