@@ -1,0 +1,25 @@
+relations:
+  queries:
+    - csv_url: 'data/relationships.csv'
+      filters:
+        _type: "registered_address"
+      entities:
+        address:
+          schema: UnknownLink
+          keys:
+            - _start
+            - _end
+            - link
+          properties:
+            startDate:
+              column: start_date
+              format: "%d-%b-%Y"
+            endDate:
+              column: end_date
+              format: "%d-%b-%Y"
+            role:
+              column: link
+            subject:
+              column: _start
+            object:
+              column: _end

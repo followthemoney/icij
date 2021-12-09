@@ -3,13 +3,14 @@ relations:
     - csv_url: 'data/relationships.csv'
       filters:
         _type: "officer_of"
+        link: "dir"
       entities:
         officer:
           schema: Directorship
-          key_literal: 'directorship'
           keys:
             - _start
             - _end
+            - link
           properties:
             startDate:
               column: start_date
@@ -25,14 +26,139 @@ relations:
               column: _end
     - csv_url: 'data/relationships.csv'
       filters:
-        _type: "intermediary_of"
+        _type: "officer_of"
+        link: "shareholder"
       entities:
         officer:
-          schema: Representation
-          key_literal: 'representation'
+          schema: Ownership
           keys:
             - _start
             - _end
+            - link
+          properties:
+            startDate:
+              column: start_date
+              format: "%d-%b-%Y"
+            endDate:
+              column: end_date
+              format: "%d-%b-%Y"
+            role:
+              column: link
+            owner:
+              column: _start
+            asset:
+              column: _end
+    - csv_url: 'data/relationships.csv'
+      filters:
+        _type: "officer_of"
+        link: "owner"
+      entities:
+        officer:
+          schema: Ownership
+          keys:
+            - _start
+            - _end
+            - link
+          properties:
+            startDate:
+              column: start_date
+              format: "%d-%b-%Y"
+            endDate:
+              column: end_date
+              format: "%d-%b-%Y"
+            role:
+              column: link
+            owner:
+              column: _start
+            asset:
+              column: _end
+    - csv_url: 'data/relationships.csv'
+      filters:
+        _type: "officer_of"
+        link: "representative"
+      entities:
+        officer:
+          schema: Representation
+          keys:
+            - _start
+            - _end
+            - link
+          properties:
+            startDate:
+              column: start_date
+              format: "%d-%b-%Y"
+            endDate:
+              column: end_date
+              format: "%d-%b-%Y"
+            role:
+              column: link
+            agent:
+              column: _start
+            client:
+              column: _end
+    - csv_url: 'data/relationships.csv'
+      filters:
+        _type: "intermediary_of"
+      entities:
+        intermediary:
+          schema: Representation
+          keys:
+            - _start
+            - _end
+            - link
+          properties:
+            startDate:
+              column: start_date
+              format: "%d-%b-%Y"
+            endDate:
+              column: end_date
+              format: "%d-%b-%Y"
+            role:
+              column: link
+            agent:
+              column: _start
+            client:
+              column: _end
+    - csv_url: 'data/relationships.csv'
+      filters_not:
+        _type: "intermediary_of"
+        _type: "officer_of"
+        _type: "registered_address"
+      entities:
+        unknown:
+          schema: UnknownLink
+          keys:
+            - _start
+            - _end
+            - link
+          properties:
+            startDate:
+              column: start_date
+              format: "%d-%b-%Y"
+            endDate:
+              column: end_date
+              format: "%d-%b-%Y"
+            role:
+              column: link
+            agent:
+              column: _start
+            client:
+              column: _end
+    - csv_url: 'data/relationships.csv'
+      filters:
+        _type: "officer_of"
+      filters_not:
+        link: "shareholder"
+        link: "owner"
+        link: "dir"
+        link: "representative"
+      entities:
+        unknown:
+          schema: UnknownLink
+          keys:
+            - _start
+            - _end
+            - link
           properties:
             startDate:
               column: start_date

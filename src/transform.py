@@ -11,6 +11,7 @@ mappings = {
         'entities': 'entities.yml',
         'officers': 'officers.yml',
         'others': 'others.yml',
+        # TODO - Add these addresses to related LegalEntity address & county fields
         # 'addresses': 'addresses.yml',
         }
 
@@ -51,10 +52,10 @@ def main():
                 continue
 
     # TODO - Process address relations seperately as they have to be added to entities
+    # Use address relation mapping to add address entities to related LegalEntities
+
 
     bulk.flush()
-
-    print(entities)
 
 if __name__ == "__main__":
     main()
