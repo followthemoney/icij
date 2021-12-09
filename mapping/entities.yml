@@ -1,0 +1,25 @@
+csv_url: 'data/nodes-entities.csv'
+entities:
+  company:
+    schema: Company
+    keys:
+      - _id
+    properties:
+      name:
+        column: name  
+      jurisdiction:
+        column: jurisdiction_description
+      address:
+        column: address
+      ibcRuc:
+        column: ibcRUC
+      country:
+        column: countries
+      status:
+        column: status
+      incorporationDate:
+        column: incorporation_date
+        format: "%d-%b-%Y"
+      dissolutionDate:
+        column: inactivation_date
+        format: "%d-%b-%Y"

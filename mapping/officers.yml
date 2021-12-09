@@ -1,0 +1,11 @@
+csv_url: 'data/nodes-officers.csv'
+entities:
+  person:
+    schema: LegalEntity
+    keys:
+      - _id
+    properties:
+      name:
+        column: name
+      country:
+        column: countries

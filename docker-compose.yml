@@ -17,5 +17,6 @@ services:
     volumes:
       - "./src:/icij/src"
       - "./data:/icij/data"
+      - "./mapping:/icij/mapping"
     tmpfs:
       - "/tmp"

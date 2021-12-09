@@ -1,0 +1,30 @@
+icij:
+  queries:
+    - filters:
+        _type: "officer_of"
+      entities:
+        company:
+          schema: Company
+          #key_literal: "Company"
+          keys:
+            - _end
+        person:
+          schema: Person
+          #key_literal: "Person"
+          keys:
+            - _start
+        officer:
+          schema: Membership
+          #key_literal: "Membership"
+          keys:
+            - _start
+            - _end
+          properties:
+            organization:
+              entity: company
+              required: true
+            member:
+              entity: person
+              required: true
+            summary:
+              column: link

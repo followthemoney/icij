@@ -11,5 +11,5 @@ setup(
     namespace_packages=[],
     include_package_data=True,
     zip_safe=False,
-    install_requires=["wheel", "pandas", "alephclient", "followthemoney", "followthemoney-store", "datafreeze"]
+    install_requires=["pyicu", "wheel", "pandas", "psycopg2", "alephclient", "followthemoney", "followthemoney-store", "datafreeze"]
 )
