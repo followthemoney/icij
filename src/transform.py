@@ -10,7 +10,8 @@ entities = {};
 mappings = {
         'entities': 'entities.yml',
         'officers': 'officers.yml',
-        'addresses': 'addresses.yml',
+        'others': 'others.yml',
+        # 'addresses': 'addresses.yml',
         }
 
 def get_map_generators(key, file):

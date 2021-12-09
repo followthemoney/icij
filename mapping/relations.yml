@@ -5,6 +5,29 @@ relations:
         _type: "officer_of"
       entities:
         officer:
+          schema: Directorship
+          key_literal: 'directorship'
+          keys:
+            - _start
+            - _end
+          properties:
+            startDate:
+              column: start_date
+              format: "%d-%b-%Y"
+            endDate:
+              column: end_date
+              format: "%d-%b-%Y"
+            role:
+              column: link
+            director:
+              column: _start
+            organization:
+              column: _end
+    - csv_url: 'data/relationships.csv'
+      filters:
+        _type: "intermediary_of"
+      entities:
+        officer:
           schema: Representation
           key_literal: 'representation'
           keys:

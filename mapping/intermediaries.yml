@@ -1,13 +1,15 @@
-officers:
+intermediaries:
   queries:
-    - csv_url: 'data/nodes-officers.csv'
+    - csv_url: 'data/nodes-intermediaries.csv'
       entities:
-        officer:
+        intermediary:
           schema: LegalEntity
           keys:
             - _id
           properties:
             name:
               column: name
+            address:
+              column: address
             country:
               column: countries

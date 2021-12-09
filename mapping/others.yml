@@ -1,0 +1,21 @@
+others:
+  queries:
+    - csv_url: 'data/nodes-others.csv'
+      entities:
+        company:
+          schema: Company
+          keys:
+            - _id
+          properties:
+            name:
+              column: name  
+            jurisdiction:
+              column: jurisdiction_description
+            country:
+              column: countries
+            incorporationDate:
+              column: incorporation_date
+              format: "%d-%b-%Y"
+            dissolutionDate:
+              column: closed_date
+              format: "%d-%b-%Y"
