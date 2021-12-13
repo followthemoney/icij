@@ -58,7 +58,8 @@ def main():
             # TODO - Use summary in relation record for address entity
             company = dataset.get(entities[record['_start']]);
             address = dataset.get(entities[record['_end']]);
-            address.add('summary', record['link'])
+            if 'link' in record:
+                address.add('summary', record['link'])
             bulk.put(address)
             company.add('addressEntity', address)
             bulk.put(company)

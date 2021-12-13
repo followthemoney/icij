@@ -13,10 +13,10 @@ address-relations:
           properties:
             startDate:
               column: start_date
-              format: "%d-%b-%Y"
             endDate:
               column: end_date
-              format: "%d-%b-%Y"
+            summary:
+              column: link
             subject:
               column: _start
             object:
