@@ -14,10 +14,8 @@ relations:
           properties:
             startDate:
               column: start_date
-              format: "%d-%b-%Y"
             endDate:
               column: end_date
-              format: "%d-%b-%Y"
             role:
               column: link
             director:
@@ -38,10 +36,8 @@ relations:
           properties:
             startDate:
               column: start_date
-              format: "%d-%b-%Y"
             endDate:
               column: end_date
-              format: "%d-%b-%Y"
             role:
               column: link
             owner:
@@ -62,10 +58,8 @@ relations:
           properties:
             startDate:
               column: start_date
-              format: "%d-%b-%Y"
             endDate:
               column: end_date
-              format: "%d-%b-%Y"
             role:
               column: link
             owner:
@@ -86,10 +80,8 @@ relations:
           properties:
             startDate:
               column: start_date
-              format: "%d-%b-%Y"
             endDate:
               column: end_date
-              format: "%d-%b-%Y"
             role:
               column: link
             agent:
@@ -109,10 +101,8 @@ relations:
           properties:
             startDate:
               column: start_date
-              format: "%d-%b-%Y"
             endDate:
               column: end_date
-              format: "%d-%b-%Y"
             role:
               column: link
             agent:
@@ -134,10 +124,8 @@ relations:
           properties:
             startDate:
               column: start_date
-              format: "%d-%b-%Y"
             endDate:
               column: end_date
-              format: "%d-%b-%Y"
             role:
               column: link
             subject:
@@ -162,10 +150,8 @@ relations:
           properties:
             startDate:
               column: start_date
-              format: "%d-%b-%Y"
             endDate:
               column: end_date
-              format: "%d-%b-%Y"
             role:
               column: link
             subject:

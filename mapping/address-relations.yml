@@ -1,4 +1,4 @@
-relations:
+address-relations:
   queries:
     - csv_url: 'data/relationships.csv'
       filters:
@@ -17,8 +17,6 @@ relations:
             endDate:
               column: end_date
               format: "%d-%b-%Y"
-            role:
-              column: link
             subject:
               column: _start
             object:
