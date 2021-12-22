@@ -251,9 +251,10 @@ relations:
               column: _end
     - csv_url: 'data/relationships.csv'
       filters_not:
-        _type: "intermediary_of"
-        _type: "officer_of"
-        _type: "registered_address"
+        _type: 
+          - "intermediary_of"
+          - "officer_of"
+          - "registered_address"
       entities:
         unknown:
           schema: UnknownLink

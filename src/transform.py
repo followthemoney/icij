@@ -22,7 +22,6 @@ def main():
             }
     dataset = get_dataset('icij', database_uri=environ.get('DATASTORE_URI'))
     entities = {};
-    addresses = {}
 
     # Process all addresses/entities/officers into corresponding FTM entities through FTM mappings
     for key, file in mappings.items():
@@ -60,7 +59,7 @@ def main():
             address = dataset.get(entities[record['_end']]);
             if 'link' in record:
                 address.add('summary', record['link'])
-            bulk.put(address)
+                bulk.put(address)
             company.add('addressEntity', address)
             bulk.put(company)
         bulk.flush()
