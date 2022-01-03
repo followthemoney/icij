@@ -54,12 +54,14 @@ def main():
     for gen in get_map_generators('address-relations', 'address-relations.yml'):
         bulk = dataset.bulk()
         for record in gen.source.records:
-            # TODO - Use summary in relation record for address entity
             company = dataset.get(entities[record['_start']]);
             address = dataset.get(entities[record['_end']]);
+
+            # Use summary in relation record for address entity
             if 'link' in record:
                 address.add('summary', record['link'])
                 bulk.put(address)
+
             company.add('addressEntity', address)
             bulk.put(company)
         bulk.flush()
